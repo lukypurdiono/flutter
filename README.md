@@ -1,4 +1,4 @@
-# flutter_erico_1
+# Flutter Fundamental
 
 A new Flutter project.
 
