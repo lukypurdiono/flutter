@@ -13,13 +13,29 @@ class MyApp extends StatelessWidget {
           title: Text('Image Widget'),
         ),
         body: Center(
-          child: Container(
-            padding: EdgeInsets.all(4),
-            color: Colors.black12,
-            child: Image(
-              image: AssetImage("images/iron_man.jpg"),
-              fit: BoxFit.cover,
-            ),
+          child: Row(
+//            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Spacer(flex: 1),
+              Container(
+                width: 80,
+                height: 80,
+                color: Colors.red,
+              ),
+              Spacer(flex: 2),
+              Container(
+                width: 80,
+                height: 80,
+                color: Colors.red,
+              ),
+              Spacer(flex: 1),
+              Container(
+                width: 80,
+                height: 80,
+                color: Colors.red,
+              ),
+              Spacer(flex: 1),
+            ],
           ),
         ),
       ),
