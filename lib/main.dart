@@ -10,151 +10,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Latihan Stack dan Alignment'),
+          title: Text('Image Widget'),
         ),
-        body: Stack(
-          children: <Widget>[
-            //Background
-            Column(
-              children: <Widget>[
-                Flexible(
-                  flex: 1,
-                  child: Row(
-                    children: <Widget>[
-                      Flexible(
-                        flex: 1,
-                        child: Container(
-                          color: Colors.black12,
-                        ),
-                      ),
-                      Flexible(
-                        flex: 1,
-                        child: Container(
-                          color: Colors.white,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: Row(
-                    children: <Widget>[
-                      Flexible(
-                        flex: 1,
-                        child: Container(
-                          color: Colors.white,
-                        ),
-                      ),
-                      Flexible(
-                        flex: 1,
-                        child: Container(
-                          color: Colors.black12,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
+        body: Center(
+          child: Container(
+            padding: EdgeInsets.all(4),
+            color: Colors.black12,
+            child: Image(
+              image: AssetImage("images/iron_man.jpg"),
+              fit: BoxFit.cover,
             ),
-            //Listview dengan builder
-            ListView(
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text yang ada di lapisan tengah dari Stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text yang ada di lapisan tengah dari Stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text yang ada di lapisan tengah dari Stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text yang ada di lapisan tengah dari Stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text yang ada di lapisan tengah dari Stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text yang ada di lapisan tengah dari Stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text yang ada di lapisan tengah dari Stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text yang ada di lapisan tengah dari Stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text yang ada di lapisan tengah dari Stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text yang ada di lapisan tengah dari Stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text(
-                        "Ini adalah text yang ada di lapisan tengah dari Stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
-                ),
-                child: Text('Button'),
-              ),
-            )
-          ],
+          ),
         ),
       ),
     );
