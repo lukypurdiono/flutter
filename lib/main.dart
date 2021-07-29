@@ -8,44 +8,36 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          leading: Builder(
-            builder: (BuildContext context) {
-              return IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.menu),
-              );
-            },
-          ),
-          title: Text('AppBar Gradient'),
-          actions: <Widget>[
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.settings),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.exit_to_app),
-            ),
-          ],
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Color(0xff0096ff), Color(0xff6610f2)],
-                begin: FractionalOffset.topLeft,
-                end: FractionalOffset.bottomRight,
-              ),
-              image: DecorationImage(
-                image: NetworkImage(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZJGCJjPIDPohfSQfm-m7lS07j__IAEIu0idk_-H9hm3aSdEcaSSvjtu28PLXXw1qEdAY&usqp=CAU'),
-                fit: BoxFit.none,
-                repeat: ImageRepeat.repeat,
-              ),
-            ),
+        backgroundColor: Colors.green,
+        body: Container(
+          margin: EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(10.0),
+          child: ListView(
+            children: <Widget>[
+              buildCard(Icons.dangerous, 'Dangerous'),
+              buildCard(Icons.dangerous, 'Dangerous'),
+            ],
           ),
         ),
+      ),
+    );
+  }
+
+  Card buildCard(IconData iconData, String text) {
+    return Card(
+      elevation: 10,
+      child: Row(
+        children: <Widget>[
+          Container(
+            height: 30,
+            child: Icon(
+              iconData,
+              color: Colors.green,
+            ),
+          ),
+          Text(text),
+        ],
       ),
     );
   }
