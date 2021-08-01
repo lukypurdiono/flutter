@@ -2,42 +2,40 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.green,
+        appBar: AppBar(
+          title: Text('Latihan TextField'),
+        ),
         body: Container(
-          margin: EdgeInsets.all(10.0),
-          padding: EdgeInsets.all(10.0),
-          child: ListView(
+          margin: EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              buildCard(Icons.dangerous, 'Dangerous'),
-              buildCard(Icons.dangerous, 'Dangerous'),
+              TextField(
+                obscureText: true, //apabila password yg diinput
+                maxLength: 5, // panjang maksimal 5 karakter
+                maxLines: 1, //apabila sudah mentok, cuma ada 1 baris
+                onChanged: (value) {
+                  setState(() {});
+                },
+                controller: controller,
+              ),
+              Text(controller.text),
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Card buildCard(IconData iconData, String text) {
-    return Card(
-      elevation: 10,
-      child: Row(
-        children: <Widget>[
-          Container(
-            height: 30,
-            child: Icon(
-              iconData,
-              color: Colors.green,
-            ),
-          ),
-          Text(text),
-        ],
       ),
     );
   }
