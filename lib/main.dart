@@ -24,6 +24,21 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               TextField(
+                decoration: InputDecoration(
+                  fillColor: Colors.lightBlue[50],
+                  filled: true,
+                  prefixIcon: Icon(Icons.person),
+                  prefixText: 'Name: ',
+                  prefixStyle: TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w700,
+                  ),
+                  hintText: 'Nama lengkap anda',
+                  labelText: 'Nama lengkap',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                ),
                 obscureText: true, //apabila password yg diinput
                 maxLength: 5, // panjang maksimal 5 karakter
                 maxLines: 1, //apabila sudah mentok, cuma ada 1 baris
